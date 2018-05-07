@@ -4,8 +4,10 @@ require 'tiny_segmenter'
 ignore = ["の", "に", "て", "は", "た", "が", "を", "で", "も", "と", "だ", "な", "か", "や"]
 
 # Read arguments
-input = ARGV
-content = File.read input[0]
+content = ""
+for arg in ARGV
+	content = content + File.read(arg)
+end
 
 # Parse the input
 ts = TinySegmenter.new
